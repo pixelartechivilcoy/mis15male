@@ -4,35 +4,38 @@
 const audio = document.getElementById("musica");
 const musicBtn = document.getElementById("musicToggle");
 
-if (audio && musicBtn) {
-  // Estado inicial
-  musicBtn.textContent = "▶";
-  musicBtn.classList.add("paused");
+let iniciado = false;
 
-  // Botón play / pausa
-  musicBtn.addEventListener("click", () => {
-    if (audio.paused) {
-      audio.play().then(() => {
-        musicBtn.textContent = "❚❚";
-        musicBtn.classList.remove("paused");
-      }).catch(err => console.warn("Error al reproducir:", err));
-    } else {
-      audio.pause();
-      musicBtn.textContent = "▶";
-      musicBtn.classList.add("paused");
-    }
+// función para iniciar música
+function iniciarMusica() {
+  if (iniciado) return;
+
+  audio.play().then(() => {
+    musicBtn.textContent = "❚❚";
+    musicBtn.classList.remove("paused");
+    iniciado = true;
+  }).catch(() => {
+    // si el navegador bloquea, no hacemos nada
   });
-
-  // Reproducir al ingresar desde index.html
-  const shouldPlay = sessionStorage.getItem("playMusic");
-  if (shouldPlay === "true") {
-    audio.play().then(() => {
-      musicBtn.textContent = "❚❚";
-      musicBtn.classList.remove("paused");
-      sessionStorage.removeItem("playMusic");
-    }).catch(err => console.warn("Autoplay bloqueado:", err));
-  }
 }
+
+// 🔥 PRIMERA interacción del usuario (CLAVE)
+document.addEventListener("click", iniciarMusica, { once: true });
+document.addEventListener("touchstart", iniciarMusica, { once: true });
+document.addEventListener("scroll", iniciarMusica, { once: true });
+
+// botón play / pausa
+musicBtn.addEventListener("click", () => {
+  if (audio.paused) {
+    audio.play();
+    musicBtn.textContent = "❚❚";
+    musicBtn.classList.remove("paused");
+  } else {
+    audio.pause();
+    musicBtn.textContent = "▶";
+    musicBtn.classList.add("paused");
+  }
+});
 
 // =======================
 // 🎥 PARALLAX PORTADA
@@ -319,4 +322,5 @@ if (mensaje && contador) {
     contador.textContent = `${restantes} caracteres restantes`;
   });
 }
+
 
