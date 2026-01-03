@@ -1,0 +1,1235 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: 'Belleza', sans-serif;
+  background-color: #ffffff;
+}
+
+
+.foto-portada {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  overflow: visible;     /* CLAVE */
+}
+
+.foto-portada img {
+  position: relative;
+  z-index: 1;
+}
+
+/* Foto principal */
+.foto-portada img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 45%;
+  z-index: 1;
+  border-radius: 0;
+  box-shadow: none;
+  will-change: transform;
+  transition: transform 0.1s linear;
+}
+
+
+/* Botón música */
+.music-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: #F3E1C1; /* mismo tono frases */
+  border: none;
+  color: #7C5F3E;           /* play blanco */
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: 0 10px 24px rgba(0,0,0,0.25);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.music-btn:hover {
+  transform: scale(1.08);
+}
+
+.music-btn.paused {
+  opacity: 0.65;
+}
+
+.foto-portada img {
+  will-change: transform;
+  transition: transform 0.1s linear;
+}
+
+.countdown-wrapper {
+  position: absolute;
+  bottom: -55px;            /* mitad sobre foto / mitad blanco */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 10;
+}
+
+.countdown {
+  display: flex;
+  gap: 1.6rem;
+  background: transparent;
+}
+
+.time-box {
+  background-color: #D9BB8C; /* beige-cálido */
+  color: #7C5F3E;            /* marrón-oscuro */
+  width: 95px;
+  height: 130px;
+  border-radius: 8px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}
+
+.time-box span {
+  font-size: 2.8rem;
+  font-family: 'Belleza', sans-serif;
+  color: #7C5F3E; /* marrón oscuro */
+  line-height: 1;
+}
+
+.time-box small {
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  margin-top: 8px;
+  color: #7C5F3E;
+}
+
+
+@media (max-width: 480px) {
+  .time-box {
+    width: 75px;
+    height: 110px;
+  }
+
+  .time-box span {
+    font-size: 2.2rem;
+  }
+
+  .countdown-wrapper {
+    bottom: -20px;
+  }
+}
+
+.hero-text {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 2;
+  pointer-events: none;
+}
+
+
+.hero-title {
+  display: block;
+  font-family: 'Belleza', sans-serif;
+  font-size: 3rem;
+  letter-spacing: 4px;
+  color: #ffffff; /* rosa empolvado */
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+
+}
+
+.hero-name {
+  display: block;
+  margin-top: -1rem;
+  font-family: 'Dancing Script', cursive;
+  font-size: 3.5rem;
+  color: #ffffff;
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+
+}
+
+@media (max-width: 480px) {
+
+  /* TEXTO */
+  .hero-text {
+    top: 50%;
+    transform: translateX(-50%);
+  }
+
+  .hero-title {
+    font-size: 2rem;
+    letter-spacing: 2px;
+  }
+
+  .hero-name {
+    font-size: 2.5rem;
+    margin-top: -0.5rem;
+  }
+
+  /* CUENTA */
+  .countdown {
+    gap: 0.6rem;
+  }
+
+  .time-box {
+    width: 65px;
+    height: 80px;
+  }
+
+  .time-box span {
+    font-size: 1.4rem;
+  }
+
+  .time-box small {
+    font-size: 0.55rem;
+  }
+}
+
+.section-fecha {
+  background-color: #E6CFA8; /* similar a la referencia */
+  padding: 90px 20px;
+  text-align: center;
+}
+
+.fecha-titulo,
+.donde-titulo,
+.dresscode-titulo,
+.album-titulo {
+  font-family: 'Dancing Script', cursive;
+  font-size: clamp(2.1rem, 4.5vw, 2.5rem);
+  font-weight: normal;
+  color: #7C5F3E;
+  letter-spacing: 0;
+  margin: 1.2rem 0 1rem;
+}
+
+.fecha-texto,
+.donde-info, 
+.dresscode-aclaracion,
+.album-texto{
+  font-family: 'Belleza', sans-serif;
+  font-size: clamp(1rem, 2.8vw, 1.15rem);
+  letter-spacing: 0.06em;
+  line-height: 1.8;
+  color: #7C5F3E;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.fecha-icono img,
+.icono-donde,
+.dresscode-icono,
+.album-icono {
+  width: 78px;
+  margin: 0 auto 1rem;
+  display: block;
+}
+
+.fecha-contenido {
+  max-width: 600px;
+  margin: 0 auto;
+  color: #7C5F3E;
+}
+
+@keyframes floatIcon {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0); }
+}
+
+.fade-section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 480px) {
+  .section-fecha {
+    padding: 70px 20px;
+  }
+
+  .fecha-titulo {
+    font-size: 2rem;
+  }
+
+  .fecha-texto {
+    font-size: 0.95rem;
+  }
+}
+
+.section-blanca {
+   height: 130px;   /* antes 135px */
+  background-color: #ffffff;
+  position: relative;
+  z-index: 2;
+}
+
+.donde-section {
+  background-color: #ffffff;
+  padding: 3.5rem 1.5rem 3rem;
+  text-align: center;
+}
+
+.donde-boton {
+  background: transparent;
+  border: 1px solid #7C5F3E;
+  padding: 0.6rem 2.2rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  color: #7C5F3E;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.donde-boton:hover {
+  background-color: #7C5F3E;
+  color: #ffffff;
+}
+
+@media (max-width: 480px) {
+  .fecha-icono img,
+  .icono-donde {
+    width: 65px;
+  }
+
+  .fecha-texto,
+  .donde-info {
+    font-size: 0.95rem;
+  }
+}
+
+/* =======================
+   🗺️ MAPA MODAL
+======================= */
+
+.mapa-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+}
+
+.mapa-modal.activo {
+  display: flex;
+}
+
+.mapa-contenido {
+  position: relative;
+  width: 90%;
+  max-width: 800px;
+  height: 70vh;
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.mapa-contenido iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.mapa-cerrar {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: #ffffff;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  z-index: 10;
+  color: #7C5F3E;
+}
+
+/* =======================
+   FRASE SEPARADOR
+======================= */
+
+.frase-separador {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+
+  padding: 2.5rem 1.5rem;
+  background-color: #ffffff;
+
+  position: relative;
+  z-index: 3;
+  text-align: center;
+    overflow: hidden;
+}
+
+.linea {
+  display: block;
+  width: 70%;
+  max-width: 600px;
+  height: 1.5px;
+  margin: 1.4rem auto;
+  background-color: #7C5F3E;
+}
+
+.frase-texto {
+  font-family: 'Belleza', sans-serif;
+  font-size: 1.15rem;      /* ⬅️ más grande */
+  letter-spacing: 0.08em;
+  line-height: 1.6;
+  text-transform: uppercase;
+  color: #7C5F3E;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+@media (max-width: 480px) {
+  .frase-texto {
+    font-size: 0.85rem;
+    letter-spacing: 0.12em;
+    line-height: 1.5;
+  }
+  .frase-separador .linea {
+    width: 65%;
+    max-width: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .frase-separador {
+    margin-top: -15px;   /* ⬅️ menos separación que en desktop */
+  }
+}
+
+@media (max-width: 480px) {
+  .section-blanca {
+    height: 90px;    /* antes ~130px */
+  }
+}
+
+/* =======================
+   CARRUSEL
+======================= */
+
+.carousel-section {
+  background-color: #E6CFA8;
+  padding: 1.8rem 1.5rem;
+  overflow: hidden;
+}
+
+.carousel-container {
+  overflow: hidden;   /* ⬅️ ESTO ES LA CLAVE */
+  width: 100%;
+  position: relative;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease;
+  flex: 0 0 33.3333%;
+}
+
+.carousel-item {
+  flex: 0 0 calc(33.333% - 0.8rem);
+  margin-right: 1.2rem;
+}
+
+.carousel-item:last-child {
+  margin-right: 0;
+}
+
+.carousel-item img {
+  width: 100%;
+  display: block;
+}
+
+/* BOTONES */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: 1px solid #F3E1C1;
+  color: #F3E1C1;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  font-size: 1.4rem;
+  cursor: pointer;
+  z-index: 10; /* ⬅️ CLAVE */
+}
+
+
+.carousel-btn:hover {
+  background-color: #F3E1C1;
+  color: var(--marron-oscuro);
+}
+
+.carousel-btn.prev {
+  left: 10px;
+}
+
+.carousel-btn.next {
+  right: 10px;
+}
+
+@media (max-width: 768px) {
+  .carousel-item {
+    flex: 0 0 100%;
+  }
+
+  .carousel-btn.prev {
+    left: 5px;
+  }
+
+  .carousel-btn.next {
+    right: 5px;
+  }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: all 0.8s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =======================
+   REVEAL ON SCROLL
+======================= */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== APARICIÓN DEL CARRUSEL ===== */
+.carousel-section {
+  overflow: hidden;
+}
+
+.carousel-container {
+  transition: 
+    transform 1s ease,
+    opacity 1s ease;
+}
+
+/* Estado inicial: abajo + esquina + chico */
+.carousel-hidden {
+  opacity: 0;
+  transform: translate(60px, 80px) scale(0.7);
+}
+
+/* Estado visible */
+.carousel-visible {
+  opacity: 1;
+  transform: translate(0, 0) scale(1);
+}
+
+/* =======================
+   DRESS CODE
+======================= */
+
+.dresscode-section {
+  background-color: #ffffff;
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
+
+/* TIPO */
+.dresscode-tipo {
+  font-family: 'Belleza', sans-serif;
+  font-size: 0.95rem;
+  letter-spacing: 0.25em;
+  color: #7C5F3E;
+  margin-bottom: 1.2rem;
+}
+
+/* LÍNEA */
+.dresscode-linea {
+  width: 90px;
+  height: 1.5px;
+  background-color: #7C5F3E;
+  margin: 0 auto 1.5rem;
+}
+
+/* ACLARACIÓN */
+
+@media (max-width: 480px) {
+  .dresscode-icono {
+    width: 60px;
+  }
+
+  .dresscode-linea {
+    width: 70px;
+  }
+
+  .dresscode-tipo {
+    font-size: 0.85rem;
+    letter-spacing: 0.22em;
+  }
+}
+
+.dresscode-icono {
+  animation: floatIcon 3s ease-in-out infinite;
+}
+
+.frase-oscura {
+  background-color: #E6CFA8;
+}
+
+/* =======================
+   ÁLBUM DE FOTOS
+======================= */
+
+.album-section {
+  background-color: #ffffff;
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
+
+/* BOTÓN */
+.album-boton {
+  background: transparent;
+  border: 1px solid #7C5F3E;
+  padding: 0.6rem 2.2rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  color: #7C5F3E;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.album-boton:hover {
+  background-color: #7C5F3E;
+  color: #ffffff;
+}
+
+@media (max-width: 480px) {
+  .album-icono {
+    width: 65px;
+  }
+
+  .album-boton {
+    font-size: 0.85rem;
+    padding: 0.8rem 1.8rem;
+  }
+}
+
+/* =======================
+   REGALO
+======================= */
+
+.regalo-section {
+  background-color: #E6CFA8;
+  padding: 90px 20px;
+  text-align: center;
+}
+
+.regalo-contenido {
+  max-width: 600px;
+  margin: 0 auto;
+  color: #7C5F3E;
+}
+
+.regalo-icono img {
+  width: 78px;
+  margin: 0 auto 1rem;
+  display: block;
+  animation: floatIcon 3s ease-in-out infinite;
+}
+
+.regalo-titulo {
+  font-family: 'Dancing Script', cursive;
+  font-size: clamp(2.1rem, 4.5vw, 2.5rem);
+  font-weight: normal;
+  color: #7C5F3E;
+  margin: 1.2rem 0 1rem;
+}
+
+.regalo-texto {
+  font-family: 'Belleza', sans-serif;
+  font-size: clamp(1rem, 2.8vw, 1.15rem);
+  letter-spacing: 0.06em;
+  line-height: 1.8;
+  color: #7C5F3E;
+}
+
+/* MOBILE */
+@media (max-width: 480px) {
+  .regalo-section {
+    padding: 70px 20px;
+  }
+
+  .regalo-icono img {
+    width: 65px;
+  }
+
+  .regalo-texto {
+    font-size: 0.95rem;
+  }
+}
+
+/* =======================
+   CARRUSEL HORIZONTAL (1 imagen)
+======================= */
+
+.carousel-horizontal .carousel-track {
+  gap: 0;
+}
+
+.carousel-horizontal .carousel-item {
+  flex: 0 0 100%;
+}
+
+.carousel-horizontal .carousel-item img {
+  aspect-ratio: 16 / 9; /* opcional, para horizontales */
+  object-fit: cover;
+}
+
+/* Fondo distinto para el carrusel horizontal */
+.carousel-horizontal {
+  background-color: #ffffff; /* o el color que quieras */
+}
+
+/* =======================
+   MÚSICA
+======================= */
+
+.musica-section {
+  background-color: #ffffff;
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
+
+.musica-icono {
+  width: 78px;
+  margin: 0 auto 1rem;
+  display: block;
+}
+
+.musica-titulo {
+  font-family: 'Dancing Script', cursive;
+  font-size: clamp(2.1rem, 4.5vw, 2.5rem);
+  font-weight: normal;
+  color: #7C5F3E;
+  letter-spacing: 0;
+  margin: 1.2rem 0 1rem;
+}
+
+.musica-texto {
+  font-family: 'Belleza', sans-serif;
+  font-size: clamp(1rem, 2.8vw, 1.15rem);
+  letter-spacing: 0.06em;
+  line-height: 1.8;
+  color: #7C5F3E;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.musica-boton {
+  background: transparent;
+  border: 1px solid #7C5F3E;
+  padding: 0.6rem 2.2rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  color: #7C5F3E;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.musica-boton:hover {
+  background-color: #7C5F3E;
+  color: #ffffff;
+}
+
+/* MOBILE */
+@media (max-width: 480px) {
+  .musica-icono {
+    width: 65px;
+  }
+
+  .musica-boton {
+    font-size: 0.85rem;
+    padding: 0.8rem 1.8rem;
+  }
+}
+
+/* =======================
+   INSTAGRAM
+======================= */
+
+.instagram-section {
+  background-color: #E6CFA8;
+  padding: 90px 20px;
+  text-align: center;
+}
+
+.instagram-contenido {
+  max-width: 600px;
+  margin: 0 auto;
+  color: #7C5F3E;
+}
+
+.instagram-icono img {
+  width: 78px;
+  margin: 0 auto 1rem;
+  display: block;
+  animation: floatIcon 3s ease-in-out infinite;
+}
+
+.instagram-titulo {
+  font-family: 'Dancing Script', cursive;
+  font-size: clamp(2.1rem, 4.5vw, 2.5rem);
+  font-weight: normal;
+  color: #7C5F3E;
+  margin: 1.2rem 0 1rem;
+}
+
+.instagram-texto {
+  font-family: 'Belleza', sans-serif;
+  font-size: clamp(1rem, 2.8vw, 1.15rem);
+  letter-spacing: 0.06em;
+  line-height: 1.8;
+  color: #7C5F3E;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* BOTÓN */
+.instagram-boton {
+  background: transparent;
+  border: 1px solid #7C5F3E;
+  padding: 0.6rem 2.2rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  color: #7C5F3E;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.instagram-boton:hover {
+  background-color: #7C5F3E;
+  color: #ffffff;
+}
+
+/* MOBILE */
+@media (max-width: 480px) {
+  .instagram-section {
+    padding: 70px 20px;
+  }
+
+  .instagram-icono img {
+    width: 65px;
+  }
+
+  .instagram-texto {
+    font-size: 0.95rem;
+  }
+
+  .instagram-boton {
+    font-size: 0.85rem;
+    padding: 0.8rem 1.8rem;
+  }
+}
+
+.asistencia-section {
+  background-color: #ffffff;
+  padding: 4rem 1.5rem;
+  text-align: center;
+  border-top: 1px solid rgba(124, 95, 62, 0.25);
+}
+
+/* TÍTULO */
+.asistencia-titulo {
+  font-family: 'Dancing Script', cursive;
+  font-size: clamp(2.1rem, 4.5vw, 2.5rem);
+  font-weight: normal;
+  color: #7C5F3E;
+  margin-bottom: 0.4rem;
+}
+
+/* FECHA */
+.asistencia-fecha {
+  font-family: 'Belleza', sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  color: #7C5F3E;
+  margin-bottom: 2.2rem;
+  text-transform: uppercase;
+}
+
+/* CARD */
+.asistencia-card {
+  max-width: 420px;
+  margin: 0 auto;
+  padding: 2.6rem 2.2rem;
+  background-color: #F3E1C1;
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* FORM */
+#asistenciaForm {
+  max-width: 380px;
+  margin: 0 auto;
+}
+
+/* CAMPOS */
+.campo {
+  margin-bottom: 1.4rem;
+  text-align: left;
+}
+
+/* LABELS */
+.label {
+  display: block;
+  font-family: 'Belleza', sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.22em;
+  color: #7C5F3E;
+  margin-bottom: 0.7rem;
+  text-transform: uppercase;
+}
+
+/* INPUTS */
+input,
+select,
+textarea {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid rgba(124, 95, 62, 0.45);
+  padding: 0.45rem 0;
+  font-family: 'Belleza', sans-serif;
+  font-size: 0.85rem;
+  background: transparent;
+  color: #7C5F3E;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: rgba(124, 95, 62, 0.55);
+}
+
+/* TEXTAREA */
+textarea {
+  resize: none;
+  height: 85px;
+}
+
+/* RADIOS */
+.radio-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.85rem;
+  color: #7C5F3E;
+}
+
+input[type="radio"] {
+  width: auto;
+  accent-color: #7C5F3E;
+}
+
+/* BOTÓN */
+.asistencia-boton {
+  margin: 2.2rem auto 0;
+  padding: 0.7rem 2.4rem;
+  border: 1px solid #7C5F3E;
+  background: transparent;
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  color: #7C5F3E;
+  cursor: pointer;
+  display: block;
+  transition: all 0.3s ease;
+}
+
+.asistencia-boton:hover {
+  background-color: #7C5F3E;
+  color: #ffffff;
+}
+
+/* MENSAJE GRACIAS */
+.mensaje-gracias {
+  margin-top: 2rem;
+  padding: 1.8rem 1.5rem;
+  background-color: #ffffff;
+  text-align: center;
+  border-radius: 6px;
+  border: 1px solid rgba(124, 95, 62, 0.25);
+}
+
+.mensaje-titulo {
+  font-family: 'Belleza', sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.22em;
+  color: #7C5F3E;
+  margin-bottom: 0.6rem;
+  text-transform: uppercase;
+}
+
+.mensaje-texto {
+  font-family: 'Belleza', sans-serif;
+  font-size: 0.85rem;
+  color: #7C5F3E;
+  line-height: 1.6;
+}
+
+/* UTIL */
+.oculto {
+  display: none;
+}
+
+/* =======================
+   GOOGLE CALENDAR
+======================= */
+
+.calendario-section {
+  background-color: #E6CFA8;
+  padding: 90px 20px;
+  text-align: center;
+}
+
+.calendario-contenido {
+  max-width: 600px;
+  margin: 0 auto;
+  color: #7C5F3E;
+}
+
+.calendario-icono img {
+  width: 78px;
+  margin: 0 auto 1rem;
+  display: block;
+  animation: floatIcon 3s ease-in-out infinite;
+}
+
+.calendario-titulo {
+  font-family: 'Dancing Script', cursive;
+  font-size: clamp(2.1rem, 4.5vw, 2.5rem);
+  font-weight: normal;
+  color: #7C5F3E;
+  margin: 1.2rem 0 1rem;
+}
+
+.calendario-texto {
+  font-family: 'Belleza', sans-serif;
+  font-size: clamp(1rem, 2.8vw, 1.15rem);
+  letter-spacing: 0.06em;
+  line-height: 1.8;
+  color: #7C5F3E;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* BOTÓN */
+.calendario-boton {
+  background: transparent;
+  border: 1px solid #7C5F3E;
+  padding: 0.6rem 2.2rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  color: #7C5F3E;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.calendario-boton:hover {
+  background-color: #7C5F3E;
+  color: #ffffff;
+}
+
+/* MOBILE */
+@media (max-width: 480px) {
+  .calendario-section {
+    padding: 70px 20px;
+  }
+
+  .calendario-icono img {
+    width: 65px;
+  }
+
+  .calendario-texto {
+    font-size: 0.95rem;
+  }
+
+  .calendario-boton {
+    font-size: 0.85rem;
+    padding: 0.8rem 1.8rem;
+  }
+}
+
+/* =======================
+   FOTO FINAL – TE ESPERO
+======================= */
+
+.foto-espera-section {
+  background-color: #E6CFA8; /* beige de las otras secciones */
+  padding: 4rem 1.5rem 4.5rem;
+  text-align: center;
+}
+
+.foto-espera-contenido {
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+/* FOTO */
+/* FOTO */
+.foto-espera-img {
+  width: 100%;
+  max-width: 420px; /* mobile */
+  border-radius: 10px;
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.18);
+  margin: 0 auto 2rem;
+  display: block;
+}
+
+/* DESKTOP */
+@media (min-width: 768px) {
+  .foto-espera-img {
+    max-width: 520px;
+  }
+}
+
+/* ICONO */
+.foto-espera-icono {
+  width: 70px;
+  margin: 0 auto 1.2rem;
+  display: block;
+  animation: floatIcon 3s ease-in-out infinite;
+}
+
+/* TEXTO */
+.foto-espera-texto {
+  font-family: 'Belleza', sans-serif;
+  font-size: 1.05rem;
+  letter-spacing: 0.18em;
+  color: #7C5F3E;
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+}
+
+/* NOMBRE */
+.foto-espera-nombre {
+  font-family: 'Dancing Script', cursive;
+  font-size: 2.6rem;
+  color: #7C5F3E;
+}
+
+/* MOBILE */
+@media (max-width: 480px) {
+  .foto-espera-img {
+    border-radius: 8px;
+  }
+
+  .foto-espera-icono {
+    width: 60px;
+  }
+
+  .foto-espera-nombre {
+    font-size: 2.3rem;
+  }
+}
+
+/* =======================
+   FOOTER
+======================= */
+
+.footer {
+  background-color: #ffffff; /* beige */
+  padding: 2.5rem 1.5rem;
+}
+
+.footer-contenido {
+  max-width: 900px;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* LOGO */
+.footer-logo {
+  width: 90px;
+}
+
+/* REDES */
+.footer-redes {
+  display: flex;
+  gap: 1.2rem;
+}
+
+.footer-icono img {
+  width: 28px;
+  opacity: 0.85;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.footer-icono:hover img {
+  transform: scale(1.12);
+  opacity: 1;
+}
+
+@media (max-width: 480px) {
+  .footer-contenido {
+    flex-direction: row;       /* 👈 en línea */
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
+  .footer-logo {
+    width: 75px;
+  }
+
+  .footer-redes {
+    gap: 1rem;
+  }
+
+  .footer-icono img {
+    width: 28px;
+  }
+}
+

@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mis 15 Male</title>
+
+  <link rel="icon" type="image/png" href="Pixelarte Isologotipo.png">
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Belleza&family=Dancing+Script&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="inv.css">
+</head>
+<body>
+
+  <!-- Música -->
+  <audio id="musica" loop>
+    <source src="coldplay-sky-full-of-stars.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Botón música -->
+  <button id="musicToggle" class="music-btn">▶</button>
+
+<section class="foto-portada">
+  <div class="fondo-blur"></div>
+  <img src="DSC_3628.JPG" alt="Foto de la quinceañera">
+
+  <div class="hero-text">
+    <span class="hero-title">MIS 15</span>
+    <span class="hero-name">Male</span>
+  </div>
+
+  
+   <!-- CUENTA REGRESIVA -->
+  <div class="countdown-wrapper">
+    <div class="countdown">
+      <div class="time-box">
+        <span id="days">0</span>
+        <small>DÍAS</small>
+      </div>
+      <div class="time-box">
+        <span id="hours">0</span>
+        <small>HORAS</small>
+      </div>
+      <div class="time-box">
+        <span id="minutes">0</span>
+        <small>MINUTOS</small>
+      </div>
+      <div class="time-box">
+        <span id="seconds">0</span>
+        <small>SEGUNDOS</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+ <section class="section-blanca"></section>
+
+ <section class="frase-separador">
+  <div class="linea reveal"></div>
+
+  <p class="frase-texto reveal">
+    SERÁ UNA NOCHE MÁGICA PARA MÍ Y ME ENCANTARÍA QUE LA DISFRUTES CONMIGO
+  </p>
+
+  <div class="linea reveal"></div>
+</section>
+
+<section class="section-fecha reveal">
+  <div class="fecha-contenido">
+    
+    <div class="fecha-icono">
+      <img src="Calendario.gif" alt="Calendario">
+    </div>
+
+    <h2 class="fecha-titulo">¿Cuándo?</h2>
+
+    <p class="fecha-texto">
+      17 de Enero de 2026<br>
+      | 21:30 Hs |
+    </p>
+
+  </div>
+</section>
+
+<section class="donde-section reveal">
+
+  <!-- ICONO (poné tu imagen acá) -->
+  <img src="Ubicacion.gif" alt="Ubicación" class="icono-donde">
+
+  <p class="donde-titulo">¿Dónde?</p>
+
+  <p class="donde-info">
+    Club Atlético <br>
+    Norberto de la Riestra, Buenos Aires
+  </p>
+
+  <button class="donde-boton" onclick="abrirMapa('fiesta')">
+    VER MAPA
+  </button>
+
+</section>
+<!-- MAPA MODAL -->
+<div id="mapaModal" class="mapa-modal">
+  <div class="mapa-contenido">
+    <button class="mapa-cerrar" onclick="cerrarMapa()">✕</button>
+
+    <iframe
+      src="https://www.google.com/maps?q=Club%20Atl%C3%A9tico%20Norberto%20de%20la%20Riestra%20Buenos%20Aires&output=embed"
+      allowfullscreen
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+</div>
+
+<section class="carousel-section reveal">
+  <div class="carousel-container carousel-hidden">
+
+
+    <button class="carousel-btn prev" onclick="moveSlide(this, -1)">‹</button>
+<button class="carousel-btn next" onclick="moveSlide(this, 1)">›</button>
+
+
+
+    <div class="carousel-track">
+      <div class="carousel-item"><img src="1.JPG" alt=""></div>
+      <div class="carousel-item"><img src="2.JPG" alt=""></div>
+      <div class="carousel-item"><img src="3.JPG" alt=""></div>
+      <div class="carousel-item"><img src="4.JPG" alt=""></div>
+      <div class="carousel-item"><img src="5.JPG" alt=""></div>
+      <div class="carousel-item"><img src="1.JPG" alt=""></div>
+      <div class="carousel-item"><img src="2.JPG" alt=""></div>
+      <div class="carousel-item"><img src="3.JPG" alt=""></div>
+      <div class="carousel-item"><img src="4.JPG" alt=""></div>
+      <div class="carousel-item"><img src="5.JPG" alt=""></div>
+      <div class="carousel-item"><img src="1.JPG" alt=""></div>
+      <div class="carousel-item"><img src="2.JPG" alt=""></div>
+      <div class="carousel-item"><img src="3.JPG" alt=""></div>
+      <div class="carousel-item"><img src="4.JPG" alt=""></div>
+      <div class="carousel-item"><img src="5.JPG" alt=""></div>
+      <div class="carousel-item"><img src="1.JPG" alt=""></div>
+      <div class="carousel-item"><img src="2.JPG" alt=""></div>
+      <div class="carousel-item"><img src="3.JPG" alt=""></div>
+      <div class="carousel-item"><img src="4.JPG" alt=""></div>
+      <div class="carousel-item"><img src="5.JPG" alt=""></div>
+      <div class="carousel-item"><img src="1.JPG" alt=""></div>
+      <div class="carousel-item"><img src="2.JPG" alt=""></div>
+      <div class="carousel-item"><img src="3.JPG" alt=""></div>
+      <div class="carousel-item"><img src="4.JPG" alt=""></div>
+      <div class="carousel-item"><img src="5.JPG" alt=""></div>
+      <div class="carousel-item"><img src="1.JPG" alt=""></div>
+      <div class="carousel-item"><img src="2.JPG" alt=""></div>
+      <div class="carousel-item"><img src="3.JPG" alt=""></div>
+      <div class="carousel-item"><img src="4.JPG" alt=""></div>
+      <div class="carousel-item"><img src="5.JPG" alt=""></div>
+    </div>
+
+  </div>
+</section>
+
+<section class="dresscode-section reveal">
+
+  <!-- ICONO (reemplazá src por el tuyo) -->
+  <img src="Diamante.gif" alt="Dress Code" class="dresscode-icono">
+
+  <h2 class="dresscode-titulo">Dress Code</h2>
+
+  <p class="dresscode-tipo">ELEGANTE</p>
+
+  <div class="dresscode-linea"></div>
+
+  <p class="dresscode-aclaracion">
+    Para mantener la armonía de la celebración,<br>
+    les pedimos evitar los tonos<br>
+    rosa, verde claro, blanco, bordo<br>
+    y prendas con brillos.<br>
+  </p>
+
+</section>
+
+<section class="frase-separador frase-oscura reveal">
+
+  <div class="linea reveal"></div>
+
+  <p class="frase-texto reveal">
+    UNA NOCHE PARA SOÑAR, CELEBRAR Y COMPARTIR MOMENTOS INOLVIDABLES
+  </p>
+
+  <div class="linea reveal"></div>
+
+</section>
+
+<section class="album-section reveal">
+
+  <!-- ICONO (poné el tuyo) -->
+  <img src="Camara.gif" alt="Álbum de fotos" class="album-icono">
+
+  <h2 class="album-titulo">Quiero ver tus fotos</h2>
+
+  <p class="album-texto">
+    Pueden subir todas sus fotos del<br>
+    evento a mi álbum compartido<br>
+  </p>
+
+  <a
+    href="https://drive.google.com/drive/folders/1BwnazctbgVmKn-sVaSAehuvOBmSTiSDH?usp=sharing"
+    target="_blank"
+    class="album-boton"
+  >
+    SUBIR FOTOS
+  </a>
+
+</section>
+
+<section class="regalo-section reveal">
+
+  <div class="regalo-contenido">
+
+    <!-- ICONO -->
+    <div class="regalo-icono">
+      <img src="Regalo.gif" alt="Regalo">
+    </div>
+
+    <h2 class="regalo-titulo">Regalo</h2>
+
+    <p class="regalo-texto">
+      Nada es más importante que tú presencia,<br>
+      pero sí deseás hacerme un regalo<br>
+      Será recibido con mucho amor.<br>
+      También esa noche habrá una urna<br>
+    </p>
+
+  </div>
+
+</section>
+
+<section class="carousel-section carousel-horizontal reveal">
+
+  <div class="carousel-container carousel-hidden">
+
+    <button class="carousel-btn prev" onclick="moveSlide(this, -1)">‹</button>
+<button class="carousel-btn next" onclick="moveSlide(this, 1)">›</button>
+
+
+    <div class="carousel-track">
+      <div class="carousel-item"><img src="10.JPG" alt=""></div>
+      <div class="carousel-item"><img src="11.JPG" alt=""></div>
+      <div class="carousel-item"><img src="12.jpeg" alt=""></div>
+      <div class="carousel-item"><img src="13.JPG" alt=""></div>
+      <div class="carousel-item"><img src="14.jpeg" alt=""></div>
+      <div class="carousel-item"><img src="10.JPG" alt=""></div>
+      <div class="carousel-item"><img src="11.JPG" alt=""></div>
+      <div class="carousel-item"><img src="12.jpeg" alt=""></div>
+      <div class="carousel-item"><img src="13.JPG" alt=""></div>
+      <div class="carousel-item"><img src="14.jpeg" alt=""></div>
+      <div class="carousel-item"><img src="10.JPG" alt=""></div>
+      <div class="carousel-item"><img src="11.JPG" alt=""></div>
+      <div class="carousel-item"><img src="12.jpeg" alt=""></div>
+      <div class="carousel-item"><img src="13.JPG" alt=""></div>
+      <div class="carousel-item"><img src="14.jpeg" alt=""></div>
+      <div class="carousel-item"><img src="10.JPG" alt=""></div>
+      <div class="carousel-item"><img src="11.JPG" alt=""></div>
+      <div class="carousel-item"><img src="12.jpeg" alt=""></div>
+      <div class="carousel-item"><img src="13.JPG" alt=""></div>
+      <div class="carousel-item"><img src="14.jpeg" alt=""></div>
+      <div class="carousel-item"><img src="10.JPG" alt=""></div>
+      <div class="carousel-item"><img src="11.JPG" alt=""></div>
+      <div class="carousel-item"><img src="12.jpeg" alt=""></div>
+      <div class="carousel-item"><img src="13.JPG" alt=""></div>
+      <div class="carousel-item"><img src="14.jpeg" alt=""></div>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="frase-separador frase-oscura reveal">
+
+  <div class="linea reveal"></div>
+
+  <p class="frase-texto reveal">
+    QUIERO QUE SEAS PARTE DE ESTA NOCHE TAN ESPECIAL PARA MÍ
+  </p>
+
+  <div class="linea reveal"></div>
+
+</section>
+<section class="musica-section reveal">
+
+  <!-- ICONO (auriculares / nota / spotify) -->
+  <img src="Musica.gif" alt="Música" class="musica-icono">
+
+  <h2 class="musica-titulo">Sumá tú Canción</h2>
+
+  <p class="musica-texto">
+    Ayudame a armar la playlist de la noche.<br>
+    Podés sumar las canciones que no pueden faltar
+  </p>
+
+  <a
+    href="https://open.spotify.com/playlist/4Qp3B3kP4QxCoIdBAbT11L?si=x80C-4xDRL-a9H2Et0KqpA&pt=0bd865bb21401a1dcf6476081ead2c8c&pi=pDK7cixrR3Ct5"
+    target="_blank"
+    class="musica-boton"
+  >
+    AGREGAR CANCIONES
+  </a>
+
+</section>
+
+<section class="instagram-section reveal">
+
+  <div class="instagram-contenido">
+
+    <!-- ICONO (logo instagram / gif) -->
+    <div class="instagram-icono">
+      <img src="Corazon.gif" alt="Instagram">
+    </div>
+
+    <h2 class="instagram-titulo">Seguime en Instagram</h2>
+
+    <p class="instagram-texto">
+      Compartí tus fotos, videos y recuerdos<br>
+de esta noche tan especial<br>
+      etiquetándome en Instagram.<br>
+    </p>
+
+    <a
+      href="https://www.instagram.com/maleefava_/?utm_source=ig_web_button_share_sheet"
+      target="_blank"
+      class="instagram-boton"
+    >
+      VER INSTAGRAM
+    </a>
+
+  </div>
+
+</section>
+
+<section class="asistencia-section reveal">
+  <p class="asistencia-titulo">Confirmá tú Asistencia</p>
+  <p class="asistencia-fecha">Antes del 8 de Enero de 2026</p>
+
+  <div class="asistencia-card">
+    <form
+      id="asistenciaForm"
+      action="https://docs.google.com/forms/d/e/1FAIpQLScFTjsyid3BfIPR08TtWMCG4_m8SV1nTs56YqExPb2I4LBoEw/formResponse"
+      method="POST"
+      target="hidden_iframe"
+    >
+
+      <!-- ASISTENCIA -->
+      <div class="campo campo-radios">
+        <label class="label">¿Asistirás?</label>
+
+        <label class="radio-item">
+          <input type="radio" name="entry.1779840284" value="Confirmo Asistencia" required>
+          <span>¡Confirmo!</span>
+        </label>
+
+        <label class="radio-item">
+          <input type="radio" name="entry.1779840284" value="No podré asistir">
+          <span>No podré asistir</span>
+        </label>
+      </div>
+
+      <!-- CANTIDAD -->
+      <select name="entry.540690027" id="cantidadPersonas" required>
+  <option value="">Seleccionar</option>
+  <option value="1">1 persona</option>
+  <option value="2">2 personas</option>
+  <option value="3">3 personas</option>
+  <option value="4">4 personas</option>
+  <option value="5">5 personas</option>
+</select>
+
+      <!-- INVITADOS -->
+      <div id="personasContainer"></div>
+
+      <!-- CAMPO OCULTO -->
+     <textarea
+  name="entry.555114571"
+  id="datosFinales"
+  style="display:none;"
+></textarea>
+
+
+      <!-- MENSAJE -->
+      <div class="campo">
+  <label class="label">Mensaje</label>
+
+  <textarea
+    name="entry.1248954764"
+    id="mensaje"
+    placeholder="Escribime lo que quieras 🤍"
+    maxlength="200"
+  ></textarea>
+
+  <small id="contador" style="
+    display:block;
+    margin-top:6px;
+    font-size:0.65rem;
+    letter-spacing:0.12em;
+    color:#7C5F3E;
+    text-align:right;
+  ">
+    180 caracteres restantes
+  </small>
+</div>
+
+      <button type="submit" class="asistencia-boton">
+        ENVIAR RESPUESTA
+      </button>
+    </form>
+
+    <iframe name="hidden_iframe" style="display:none;"></iframe>
+
+    <div id="mensajeGracias" class="mensaje-gracias oculto">
+      <p class="mensaje-titulo">¡GRACIAS!</p>
+      <p class="mensaje-texto">Tu respuesta fue enviada correctamente 🤍</p>
+    </div>
+  </div>
+</section>
+
+<section class="calendario-section reveal">
+
+  <div class="calendario-contenido">
+
+    <!-- ICONO -->
+    <div class="calendario-icono">
+      <img src="Sobre.gif" alt="Calendario">
+    </div>
+
+    <h2 class="calendario-titulo">Save The Date</h2>
+
+    <p class="calendario-texto">
+      Sumá la fecha a tu calendario<br>
+      para no olvidarte de esta noche<br>
+      tan especial
+    </p>
+
+    <a
+      href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Mis+15+Male&dates=20260117T213000/20260118T050000&details=Te+espero+para+celebrar+mis+15&location=Club+Atlético+Norberto+de+la+Riestra"
+      target="_blank"
+      class="calendario-boton"
+    >
+      AGREGAR AL CALENDARIO
+    </a>
+
+  </div>
+
+</section>
+
+<section class="frase-separador reveal">
+  <div class="linea reveal"></div>
+
+  <p class="frase-texto reveal">
+    PREPARATE PARA UNA NOCHE <strong>¡INOLVIDABLE!</strong>
+  </p>
+
+  <div class="linea reveal"></div>
+</section>
+
+<section class="foto-espera-section reveal">
+
+  <div class="foto-espera-contenido">
+
+    <!-- FOTO VERTICAL -->
+    <img src="DSC_3636.JPG" alt="Male" class="foto-espera-img">
+
+    <!-- ICONO -->
+    <img src="Corazon.gif" alt="Icono" class="foto-espera-icono">
+
+    <!-- TEXTO -->
+    <p class="foto-espera-texto">Te espero!</p>
+    <p class="foto-espera-nombre">Male</p>
+
+  </div>
+
+</section>
+
+  <script src="script.js"></script>
+
+  <footer class="footer">
+
+  <div class="footer-contenido">
+
+    <!-- LOGO -->
+    <img src="Pixelarte Logotipo.png" alt="Pixelarte" class="footer-logo">
+
+    <!-- REDES -->
+    <div class="footer-redes">
+
+      <a
+        href="https://wa.me/5492345478614"
+        target="_blank"
+        aria-label="WhatsApp"
+        class="footer-icono"
+      >
+        <img src="Whatsapp.png" alt="WhatsApp">
+      </a>
+
+      <a
+        href="https://www.instagram.com/pixelartechivilcoy/"
+        target="_blank"
+        aria-label="Instagram"
+        class="footer-icono"
+      >
+        <img src="Instagram.png" alt="Instagram">
+      </a>
+
+    </div>
+
+  </div>
+
+</footer>
+
+</body>
+</html>
