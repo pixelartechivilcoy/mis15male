@@ -7,7 +7,7 @@
 
 /* Variables de color */
 :root {
-  --bg-color: #F3E1C1;
+  --bg-color: #ffffff;
   --text-color: #7C5F3E;
 }
 
@@ -70,4 +70,52 @@ body {
   .hero {
     gap: 1.2rem;
   }
+}
+
+@keyframes subirSuave {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.title {
+  font-family: 'Dancing Script', cursive;
+  font-size: clamp(2.2rem, 6vw, 3.5rem);
+  letter-spacing: 2px;
+
+  opacity: 0;
+  animation: subirSuave 1.2s ease-out forwards;
+}
+
+.subtitle {
+  font-size: clamp(1rem, 4vw, 1.4rem);
+  line-height: 1.4;
+  max-width: 600px;
+  letter-spacing: 0.5px;
+
+  opacity: 0;
+  animation: subirSuave 1.2s ease-out forwards;
+  animation-delay: 0.3s;
+}
+
+.enter-btn {
+  margin-top: 1rem;
+  padding: 0.8rem 2.5rem;
+  font-family: 'Belleza', sans-serif;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  color: var(--bg-color);
+  background-color: var(--text-color);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  opacity: 0;
+  animation: subirSuave 1.2s ease-out forwards;
+  animation-delay: 0.6s;
 }
