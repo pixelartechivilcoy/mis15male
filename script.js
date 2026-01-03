@@ -139,12 +139,21 @@ function moveSlide(button, direction) {
   const container = button.closest(".carousel-container");
 
   // Pausar autoplay al interactuar
-  if (container.dataset.autoplay) {
-    clearInterval(container.dataset.autoplay);
-    container.dataset.autoplay = null;
+  if (container._autoplayInterval) {
+    clearInterval(container._autoplayInterval);
+    container._autoplayInterval = null;
   }
 
   slideCarousel(container, direction);
+
+  // 🔁 volver a activar autoplay después de 4s sin interacción
+  setTimeout(() => {
+    if (!container._autoplayInterval) {
+      container._autoplayInterval = setInterval(() => {
+        slideCarousel(container, 1);
+      }, 3500);
+    }
+  }, 4000);
 }
 
 
@@ -188,13 +197,11 @@ function startAutoplay(container) {
 
 
 document.querySelectorAll(".carousel-container").forEach(container => {
-  const interval = setInterval(() => {
+  container._autoplayInterval = setInterval(() => {
     slideCarousel(container, 1);
   }, 3500);
-
-  // Guardamos el autoplay por si después querés pausarlo
-  container.dataset.autoplay = interval;
 });
+
 
 
 // =======================
@@ -322,5 +329,6 @@ if (mensaje && contador) {
     contador.textContent = `${restantes} caracteres restantes`;
   });
 }
+
 
 
